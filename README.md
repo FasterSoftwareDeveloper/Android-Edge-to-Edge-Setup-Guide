@@ -14,6 +14,23 @@ implementation "org.jetbrains.kotlin:kotlin-stdlib:2.2.20"
 implementation "androidx.core:core:1.17.0" // optional for Material 3 BottomSheet
 ```
 
+If you get any kind of duplicate library error, uncheck that library. (kotlin-stdlib-2.2.0 or Activity-1.12.0-alpha09)
+
+Error example:
+```Markdown
+a.a.a.By: Duplicate files from two libraries detected 
+File1: /mnt/expand/*/user/0/pro.sketchware/files/libs/libs/kotlin-stdlib-2.2.0/classes.jar 
+File2: /storage/emulated/0/.sketchware/libs/local_libs/kotlin-stdlib-v2.2.20/classes.jar 
+Archive path: kotlin/kotlin.kotlin_builtins
+ at a.a.a.ProjectBuilder.buildApk(ProjectBuilder.java:645)
+ at com.besome.sketch.design.DesignActivity$BuildTask.doInBackground(DesignActivity.java:1179)
+ at com.besome.sketch.design.DesignActivity$BuildTask.$r8$lambda$0AmVsWQJ9oulgeP8eMAUbl0tGkA(Unknown Source:0)
+ at com.besome.sketch.design.DesignActivity$BuildTask$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+ at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+ at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+ at java.lang.Thread.run(Thread.java:919)
+```
+
 # 💡 Google recommends:
 Use the latest stable androidx.activity and androidx.core versions
 Avoid deprecated flags like SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -48,8 +65,9 @@ If your layout uses a Top App Bar, apply insets so the toolbar does not overlap 
 
 > Steps:
 > 1. Call ViewCompat.setOnApplyWindowInsetsListener on your App Bar view.
-> 2. Get the status bar insets.
-> 3. Apply top padding to the App Bar.
+> 2. Change _app_bar to your actual _app_bar layout ID. For ViewBinding user binding.AppBar
+> 3. Get the status bar insets.
+> 4. Apply top padding to the App Bar.
 
 Example:
 ```java
@@ -73,7 +91,7 @@ import androidx.core.graphics.Insets;
 
 If you don’t use a Top App Bar, apply insets to your root layout instead.
 
-> 📝 Change _root to your actual root layout ID.
+> 📝 Change _root to your actual root layout ID. For ViewBinding user binding.{Layout binding Id}
 
 
 ```java
