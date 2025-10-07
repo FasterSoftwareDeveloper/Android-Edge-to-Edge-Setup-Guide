@@ -136,6 +136,7 @@ Check light and dark themes for contrast
 Your app now:
 Draws content behind the status and navigation bars
 Adapts automatically to gestures and themes
-Looks modern and clean with Edge-to-Edge UI
+Looks modern and clean with Edge-to-Edge UI.
+Check video: https://t.me/fastersoftwaredeveloper/465
 
 ---
